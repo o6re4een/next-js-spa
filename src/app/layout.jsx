@@ -3,6 +3,10 @@ import "./globals.css";
 import HeaderComponent from "@/components/Header";
 import FooterComponent from "@/components/FooterComponent";
 import SubHeader from "@/components/SubHeader";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+
+import { AppSidebar } from "@/components/app-sidebar";
+
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
@@ -26,13 +30,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.className}`}
-      >
-        <HeaderComponent></HeaderComponent>
-        <SubHeader></SubHeader>
-        {children}
-        <FooterComponent></FooterComponent>
+      <body>
+        <SidebarProvider>
+          <AppSidebar />
+          <main
+            className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.className}  w-screen`}
+          >
+            {" "}
+            <HeaderComponent></HeaderComponent>
+            <SubHeader></SubHeader>
+            {children}
+            <FooterComponent></FooterComponent>
+          </main>
+        </SidebarProvider>
       </body>
     </html>
   );

@@ -2,7 +2,7 @@ import Logo from "@/assets/Logo.svg";
 import Image from "next/image";
 import MenuIcon from "@/assets/MenuIcon.svg";
 import Link from "next/link";
-
+import { SidebarTrigger } from "./ui/sidebar";
 export default function HeaderComponent() {
   return (
     <section
@@ -28,7 +28,7 @@ export default function HeaderComponent() {
           <p>Книга почета</p>
         </div>
         <div className="flex sm:hidden">
-          <Image src={MenuIcon} alt="Menu"></Image>
+          <SidebarTrigger />
         </div>
       </div>
     </section>

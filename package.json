@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev-t": "cross-env NODE_OPTIONS='--inspect' next dev"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.3",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "postcss": "^8",
